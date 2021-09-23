@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Factorial Calculator</title>
 
     <link rel="stylesheet" href="../style_and_scripts/css/bootstrap.css" type="text/css"> 
     <link rel="stylesheet" href="../style_and_scripts/css/flex-container-redo.css" type="text/css">
@@ -31,6 +31,34 @@
             </li>
           </ul>
       </nav>
+      <div class="content bg-white">
+        <!-- This is here to add a block of white before the js info -->
+      </div>
+      <div class="content container-fluid">
+        <div class="form-group text-center small-padding">
+          <label for="input_value">Input Value</label>
+          <input class="form-control" id="input_value">
+        </div>
+        <button type="button" class="btn btn-primary btn-lg w-100">Factorial</button>
+        <input class="form-control text-center" type="text" placeholder="Result" readonly>
+      </div>
+      <div class="content bg-white">
+        <!-- This is here to add a block of white before the footer -->
+      </div>
+      <div class="footer bg-footer text-center container-fluid small-padding">
+        <p>Site Author: Vincent Ray-Isidore Garbonick</p>
+        <p>Current Date and Time: <span id='date-time'></span></p>
+        <script>
+          function getTime()
+          {
+            var dt = new Date();
+            document.getElementById("date-time").innerHTML = dt.toLocaleString();
+            setTimeout(getTime, 1000);
+          }
+          getTime();
+        </script>
+        <p>Browsing With: <span id='browser_type'></span></p>
+        <script src="../style_and_scripts/js/browser_detect.js"></script>
     </div>
   </body>
 </html>
