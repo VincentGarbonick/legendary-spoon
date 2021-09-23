@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Factorial Calculator</title>
+    <title>Interactive Animation</title>
 
     <link rel="stylesheet" href="../style_and_scripts/css/bootstrap.css" type="text/css"> 
     <link rel="stylesheet" href="../style_and_scripts/css/flex-container-redo.css" type="text/css">
@@ -21,32 +21,24 @@
               <a class="nav-link" href="../main.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Factorial Calculator</a>
+              <a class="nav-link active" href="../pages/factorial_calculator.html">Factorial Calculator</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/interactive_animation.html">Interactive Animation</a>
+              <a class="nav-link" href="#">Interactive Animation</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../pages/about_us_video.html">About Us Video</a>
             </li>
           </ul>
       </nav>
-      <div class="content bg-white">
-        <!-- This is here to add a block of white before the js info -->
-      </div>
-      <div class="content container-fluid">
-        <div class="form-group text-center small-padding">
-          <label for="input_value">Input Value</label>
-          <input class="form-control" id="input_value">
-        </div>
-        <button type="button" onclick="factorial()" class="btn btn-primary btn-lg w-100">Calculate</button>
-        <div class="text-center small-padding">
-          <p id="result_text">Result: </p>
-        </div>
-        <script src="../style_and_scripts/js/factorial.js"></script>
-      </div>
-      <div class="content bg-white">
-        <!-- This is here to add a block of white before the footer -->
+      <div class="content bg-white" id="KH8_container" onclick="eventclick()">
+        <button type="button" onclick="get_x_y_pos()" class="btn btn-primary btn-lg w-100">Get_div_size</button>
+        <p id="x_pos_div">X pos div: </p>
+        <p id="y_pos_div">Y pos div: </p>
+        <p id="x_pos_div_mouse">X pos div (mouse): </p>
+        <p id="y_pos_div_mouse">Y pos div (mouse): </p>
+        <p id="Echo">Echo: </p>
+        <script src="../style_and_scripts/js/movement.js"></script>
       </div>
       <div class="footer bg-footer text-center container-fluid small-padding">
         <p>Site Author: Vincent Ray-Isidore Garbonick</p>
