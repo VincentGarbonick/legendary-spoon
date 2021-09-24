@@ -22,8 +22,8 @@
 <p id="top">Top: </p>
 <p id="mouse_left">Mouse Left: </p>
 <p id="mouse_top">Mouse Top: </p>
-<p id="KH8_left_on_call">KH8 Left On Call: </p>
-<p id="KH8_top_on_call">KH8 Top On Call: </p>
+<p id="K8_left_on_call">K8 Left On Call: </p>
+<p id="K8_top_on_call">K8 Top On Call: </p>
 
 <div id ="myContainer" onclick="myMoveII()">
 <!--<div id ="myAnimation"></div>-->
@@ -70,14 +70,14 @@ function myMoveII()
     mouse_x -= parent_bounds.left +25;
     mouse_y -= parent_bounds.top  +25;
 
-    var KH8_current_x = parseInt(elem.style.left);
-    var KH8_current_y = parseInt(elem.style.top);
+    var K8_current_x = parseInt(elem.style.left);
+    var K8_current_y = parseInt(elem.style.top);
    
     // check if NaN
-    if(isNaN(KH8_current_x) || isNaN(KH8_current_y))
+    if(isNaN(K8_current_x) || isNaN(K8_current_y))
     {
-        KH8_current_x = 1;
-        KH8_current_y = 1;
+        K8_current_x = 1;
+        K8_current_y = 1;
         elem.style.left = 1 + 'px'; 
         elem.style.top = 1 + 'px'; 
     }
@@ -85,8 +85,8 @@ function myMoveII()
     document.getElementById("mouse_left").innerHTML = "Mouse Left: " + mouse_x;
     document.getElementById("mouse_top").innerHTML = "Mouse Top: " +  mouse_y;
     
-    document.getElementById("KH8_left_on_call").innerHTML = "KH8 Left On Call: " + KH8_current_x;
-    document.getElementById("KH8_top_on_call").innerHTML = "KH8 Top On Call: " +  KH8_current_y;
+    document.getElementById("K8_left_on_call").innerHTML = "K8 Left On Call: " + K8_current_x;
+    document.getElementById("K8_top_on_call").innerHTML = "K8 Top On Call: " +  K8_current_y;
     
     clearInterval(id);
     id = setInterval(frame, 1);
@@ -94,60 +94,60 @@ function myMoveII()
     function frame() 
     {
         
-        if(KH8_current_x == mouse_x && KH8_current_y == mouse_y) 
+        if(K8_current_x == mouse_x && K8_current_y == mouse_y) 
         {
             clearInterval(id);
         } 
         /*
-        if(KH8_current_x != mouse_x)
+        if(K8_current_x != mouse_x)
         {
-            KH8_current_x++;
-            elem.style.left = KH8_current_x + 'px'; 
+            K8_current_x++;
+            elem.style.left = K8_current_x + 'px'; 
             document.getElementById("left").innerHTML = "Left: " +  elem.style.left;
         }
-        if(KH8_current_y != mouse_y) 
+        if(K8_current_y != mouse_y) 
         {
-            KH8_current_y++;
-            elem.style.top = KH8_current_y + 'px'; 
+            K8_current_y++;
+            elem.style.top = K8_current_y + 'px'; 
             document.getElementById("top").innerHTML = "Top: " + elem.style.top;
         }
         */
         
         /*
-        if(KH8_current_x == mouse_x) 
+        if(K8_current_x == mouse_x) 
         {
             clearInterval(id);
         } 
         */
-        if(KH8_current_x > mouse_x)
+        if(K8_current_x > mouse_x)
         {
-            KH8_current_x--;
-            elem.style.left = KH8_current_x + 'px'; 
+            K8_current_x--;
+            elem.style.left = K8_current_x + 'px'; 
             document.getElementById("left").innerHTML = "Left: " +  elem.style.left; 
         }
-        if(KH8_current_x < mouse_x)
+        if(K8_current_x < mouse_x)
         {
-            KH8_current_x++;
-            elem.style.left = KH8_current_x + 'px'; 
+            K8_current_x++;
+            elem.style.left = K8_current_x + 'px'; 
             document.getElementById("left").innerHTML = "Left: " +  elem.style.left; 
         }
         
         /*
-        if(KH8_current_y == mouse_y) 
+        if(K8_current_y == mouse_y) 
         {
             clearInterval(id);
         }
         */
-        if(KH8_current_y > mouse_y) 
+        if(K8_current_y > mouse_y) 
         {
-            KH8_current_y--;
-            elem.style.top = KH8_current_y + 'px'; 
+            K8_current_y--;
+            elem.style.top = K8_current_y + 'px'; 
             document.getElementById("top").innerHTML = "Top: " + elem.style.top;
         }
-        if(KH8_current_y < mouse_y) 
+        if(K8_current_y < mouse_y) 
         {
-            KH8_current_y++;
-            elem.style.top = KH8_current_y + 'px'; 
+            K8_current_y++;
+            elem.style.top = K8_current_y + 'px'; 
             document.getElementById("top").innerHTML = "Top: " + elem.style.top;
         }
         
@@ -162,14 +162,14 @@ function myMoveIII()
     var mouse_x = event.clientX; // this is where we want to go to 
     var mouse_y = event.clientY;
 
-    var KH8_current_x = parseInt(elem.style.left);
-    var KH8_current_y = parseInt(elem.style.top);
+    var K8_current_x = parseInt(elem.style.left);
+    var K8_current_y = parseInt(elem.style.top);
 
     document.getElementById("mouse_left").innerHTML = "Mouse Left: " + mouse_x;
     document.getElementById("mouse_top").innerHTML = "Mouse Top: " +  mouse_y;
     
-    document.getElementById("KH8_left_on_call").innerHTML = "KH8 Left On Call: " + KH8_current_x;
-    document.getElementById("KH8_top_on_call").innerHTML = "KH8 Top On Call: " +  KH8_current_y;
+    document.getElementById("K8_left_on_call").innerHTML = "K8 Left On Call: " + K8_current_x;
+    document.getElementById("K8_top_on_call").innerHTML = "K8 Top On Call: " +  K8_current_y;
     
     clearInterval(id);
     id = setInterval(frame, 10);

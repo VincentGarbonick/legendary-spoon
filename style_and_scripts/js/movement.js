@@ -1,11 +1,11 @@
 function get_x_y_pos()
 {
-    var clientHeight = document.getElementById('KH8_container').clientHeight;
-    var clientWidth = document.getElementById('KH8_container').clientWidth;
+    var clientHeight = document.getElementById('K8_container').clientHeight;
+    var clientWidth = document.getElementById('K8_container').clientWidth;
     document.getElementById("x_pos_div").innerHTML = "X pos div: " + clientWidth.toString();
     document.getElementById("y_pos_div").innerHTML = "Y pos div: " + clientHeight.toString();
-    document.getElementById("left_figure").innerHTML = "Left: " + document.getElementById('KH8_container').style.left.toString();
-    document.getElementById("top_figure").innerHTML = "Right: " + document.getElementById('KH8_container').style.top.toString();
+    document.getElementById("left_figure").innerHTML = "Left: " + document.getElementById('K8_container').style.left.toString();
+    document.getElementById("top_figure").innerHTML = "Right: " + document.getElementById('K8_container').style.top.toString();
 }
 
 function eventclick()
@@ -38,8 +38,8 @@ function GetScreenCordinates(obj) {
 
 function get_image_pos(elem)
 {
-    var img_x = document.getElementById('KH8_mover').style.LeftPos;
-    var img_y = document.getElementById('KH8_mover').style.TopPos;
+    var img_x = document.getElementById('K8_mover').style.LeftPos;
+    var img_y = document.getElementById('K8_mover').style.TopPos;
     document.getElementById("x_pos_div").innerHTML = "X pos div img: " + img_x;
     document.getElementById("y_pos_div").innerHTML = "Y pos div img: " + img_y;
 }
@@ -80,14 +80,14 @@ function myMoveII()
     mouse_x -= parent_bounds.left +50;
     mouse_y -= parent_bounds.top  +50;
 
-    var KH8_current_x = parseInt(elem.style.left);
-    var KH8_current_y = parseInt(elem.style.top);
+    var K8_current_x = parseInt(elem.style.left);
+    var K8_current_y = parseInt(elem.style.top);
    
     // check if NaN
-    if(isNaN(KH8_current_x) || isNaN(KH8_current_y))
+    if(isNaN(K8_current_x) || isNaN(K8_current_y))
     {
-        KH8_current_x = 1;
-        KH8_current_y = 1;
+        K8_current_x = 1;
+        K8_current_y = 1;
         elem.style.left = 1 + 'px'; 
         elem.style.top = 1 + 'px'; 
     }
@@ -98,57 +98,57 @@ function myMoveII()
     function frame() 
     {
         
-        if(KH8_current_x == mouse_x && KH8_current_y == mouse_y) 
+        if(K8_current_x == mouse_x && K8_current_y == mouse_y) 
         {
             clearInterval(id);
         } 
         /*
-        if(KH8_current_x != mouse_x)
+        if(K8_current_x != mouse_x)
         {
-            KH8_current_x++;
-            elem.style.left = KH8_current_x + 'px'; 
+            K8_current_x++;
+            elem.style.left = K8_current_x + 'px'; 
             document.getElementById("left").innerHTML = "Left: " +  elem.style.left;
         }
-        if(KH8_current_y != mouse_y) 
+        if(K8_current_y != mouse_y) 
         {
-            KH8_current_y++;
-            elem.style.top = KH8_current_y + 'px'; 
+            K8_current_y++;
+            elem.style.top = K8_current_y + 'px'; 
             document.getElementById("top").innerHTML = "Top: " + elem.style.top;
         }
         */
         
         /*
-        if(KH8_current_x == mouse_x) 
+        if(K8_current_x == mouse_x) 
         {
             clearInterval(id);
         } 
         */
-        if(KH8_current_x > mouse_x)
+        if(K8_current_x > mouse_x)
         {
-            KH8_current_x--;
-            elem.style.left = KH8_current_x + 'px'; 
+            K8_current_x--;
+            elem.style.left = K8_current_x + 'px'; 
         }
-        if(KH8_current_x < mouse_x)
+        if(K8_current_x < mouse_x)
         {
-            KH8_current_x++;
-            elem.style.left = KH8_current_x + 'px'; 
+            K8_current_x++;
+            elem.style.left = K8_current_x + 'px'; 
         }
         
         /*
-        if(KH8_current_y == mouse_y) 
+        if(K8_current_y == mouse_y) 
         {
             clearInterval(id);
         }
         */
-        if(KH8_current_y > mouse_y) 
+        if(K8_current_y > mouse_y) 
         {
-            KH8_current_y--;
-            elem.style.top = KH8_current_y + 'px'; 
+            K8_current_y--;
+            elem.style.top = K8_current_y + 'px'; 
         }
-        if(KH8_current_y < mouse_y) 
+        if(K8_current_y < mouse_y) 
         {
-            KH8_current_y++;
-            elem.style.top = KH8_current_y + 'px'; 
+            K8_current_y++;
+            elem.style.top = K8_current_y + 'px'; 
         }
     }
 }
