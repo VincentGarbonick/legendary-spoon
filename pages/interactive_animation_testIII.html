@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMoveII()">Click Me</button> 
+</p>
+<p id="left">Left: </p>
+<p id="top">Top: </p>
+<p id="mouse_left">Mouse Left: </p>
+<p id="mouse_top">Mouse Top: </p>
+<p id="KH8_left_on_call">KH8 Left On Call: </p>
+<p id="KH8_top_on_call">KH8 Top On Call: </p>
+
+<div id ="myContainer" onclick="myMoveII()">
+<div id ="myAnimation"></div>
+</div>
+
+<script>
+var id = null;
+function myMove() 
+{
+  var elem = document.getElementById("myAnimation");   
+  var pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+
+  function frame() 
+  {
+    if (pos == 350) 
+    {
+        clearInterval(id);
+    } 
+    else 
+    {
+        pos++; 
+        elem.style.top = pos + 'px'; 
+        elem.style.left = pos + 'px'; 
+        document.getElementById("top").innerHTML = "Top: " + elem.style.top;
+        document.getElementById("left").innerHTML = "Left: " +  elem.style.left;
+    }
+  }
+}
+function myMoveII()
+{
+    
+    
+    var elem = document.getElementById("myAnimation");   
+    
+    // get bounds of parent div 
+    var parent_bounds = document.getElementById("myContainer").getBoundingClientRect();
+    
+    var mouse_x = event.clientX; // this is where we want to go to 
+    var mouse_y = event.clientY;
+
+    mouse_x -= parent_bounds.left;
+    mouse_y -= parent_bounds.top;
+
+    var KH8_current_x = parseInt(elem.style.left);
+    var KH8_current_y = parseInt(elem.style.top);
+   
+    // check if NaN
+    if(isNaN(KH8_current_x) || isNaN(KH8_current_y))
+    {
+        KH8_current_x = 1;
+        KH8_current_y = 1;
+        elem.style.left = 1 + 'px'; 
+        elem.style.top = 1 + 'px'; 
+    }
+    
+    document.getElementById("mouse_left").innerHTML = "Mouse Left: " + mouse_x;
+    document.getElementById("mouse_top").innerHTML = "Mouse Top: " +  mouse_y;
+    
+    document.getElementById("KH8_left_on_call").innerHTML = "KH8 Left On Call: " + KH8_current_x;
+    document.getElementById("KH8_top_on_call").innerHTML = "KH8 Top On Call: " +  KH8_current_y;
+    
+    clearInterval(id);
+    id = setInterval(frame, 10);
+
+    function frame() 
+    {
+        
+        if(KH8_current_x == mouse_x && KH8_current_y == mouse_y) 
+        {
+            clearInterval(id);
+        } 
+        /*
+        if(KH8_current_x != mouse_x)
+        {
+            KH8_current_x++;
+            elem.style.left = KH8_current_x + 'px'; 
+            document.getElementById("left").innerHTML = "Left: " +  elem.style.left;
+        }
+        if(KH8_current_y != mouse_y) 
+        {
+            KH8_current_y++;
+            elem.style.top = KH8_current_y + 'px'; 
+            document.getElementById("top").innerHTML = "Top: " + elem.style.top;
+        }
+        */
+        
+        /*
+        if(KH8_current_x == mouse_x) 
+        {
+            clearInterval(id);
+        } 
+        */
+        if(KH8_current_x > mouse_x)
+        {
+            KH8_current_x--;
+            elem.style.left = KH8_current_x + 'px'; 
+            document.getElementById("left").innerHTML = "Left: " +  elem.style.left; 
+        }
+        if(KH8_current_x < mouse_x)
+        {
+            KH8_current_x++;
+            elem.style.left = KH8_current_x + 'px'; 
+            document.getElementById("left").innerHTML = "Left: " +  elem.style.left; 
+        }
+        
+        /*
+        if(KH8_current_y == mouse_y) 
+        {
+            clearInterval(id);
+        }
+        */
+        if(KH8_current_y > mouse_y) 
+        {
+            KH8_current_y--;
+            elem.style.top = KH8_current_y + 'px'; 
+            document.getElementById("top").innerHTML = "Top: " + elem.style.top;
+        }
+        if(KH8_current_y < mouse_y) 
+        {
+            KH8_current_y++;
+            elem.style.top = KH8_current_y + 'px'; 
+            document.getElementById("top").innerHTML = "Top: " + elem.style.top;
+        }
+        
+        
+    }
+}
+function myMoveIII()
+{
+    var elem = document.getElementById("myAnimation");   
+    var pos = 0; // this is what causes the square to reset...
+    
+    var mouse_x = event.clientX; // this is where we want to go to 
+    var mouse_y = event.clientY;
+
+    var KH8_current_x = parseInt(elem.style.left);
+    var KH8_current_y = parseInt(elem.style.top);
+
+    document.getElementById("mouse_left").innerHTML = "Mouse Left: " + mouse_x;
+    document.getElementById("mouse_top").innerHTML = "Mouse Top: " +  mouse_y;
+    
+    document.getElementById("KH8_left_on_call").innerHTML = "KH8 Left On Call: " + KH8_current_x;
+    document.getElementById("KH8_top_on_call").innerHTML = "KH8 Top On Call: " +  KH8_current_y;
+    
+    clearInterval(id);
+    id = setInterval(frame, 10);
+
+    function frame() 
+    {
+        if (pos == 350) 
+        {
+            clearInterval(id);
+        } 
+        else 
+        {
+            pos++; 
+            elem.style.top = pos + 'px'; 
+            elem.style.left = pos + 'px'; 
+            document.getElementById("top").innerHTML = "Top: " + elem.style.top;
+            document.getElementById("left").innerHTML = "Left: " +  elem.style.left;
+        }
+    }
+}
+</script>
+
+</body>
+</html>
