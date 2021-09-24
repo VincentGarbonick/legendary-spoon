@@ -11,7 +11,6 @@
   width: 50px;
   height: 50px;
   position: absolute;
-  background-color: red;
 }
 </style>
 <body>
@@ -27,7 +26,8 @@
 <p id="KH8_top_on_call">KH8 Top On Call: </p>
 
 <div id ="myContainer" onclick="myMoveII()">
-<div id ="myAnimation"></div>
+<!--<div id ="myAnimation"></div>-->
+<img src="../style_and_scripts/assets/K8.png" id="myAnimation">
 </div>
 
 <script>
@@ -67,8 +67,8 @@ function myMoveII()
     var mouse_x = event.clientX; // this is where we want to go to 
     var mouse_y = event.clientY;
 
-    mouse_x -= parent_bounds.left;
-    mouse_y -= parent_bounds.top;
+    mouse_x -= parent_bounds.left +25;
+    mouse_y -= parent_bounds.top  +25;
 
     var KH8_current_x = parseInt(elem.style.left);
     var KH8_current_y = parseInt(elem.style.top);
@@ -89,7 +89,7 @@ function myMoveII()
     document.getElementById("KH8_top_on_call").innerHTML = "KH8 Top On Call: " +  KH8_current_y;
     
     clearInterval(id);
-    id = setInterval(frame, 10);
+    id = setInterval(frame, 1);
 
     function frame() 
     {

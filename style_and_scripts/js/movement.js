@@ -64,3 +64,91 @@ function move_image(to_move)
         elem.style.left = pos + 'px';
     }
 }
+
+function myMoveII()
+{
+    
+    
+    var elem = document.getElementById("K8_mover");   
+    
+    // get bounds of parent div 
+    var parent_bounds = document.getElementById("K8_container").getBoundingClientRect();
+    
+    var mouse_x = event.clientX; // this is where we want to go to 
+    var mouse_y = event.clientY;
+
+    mouse_x -= parent_bounds.left +50;
+    mouse_y -= parent_bounds.top  +50;
+
+    var KH8_current_x = parseInt(elem.style.left);
+    var KH8_current_y = parseInt(elem.style.top);
+   
+    // check if NaN
+    if(isNaN(KH8_current_x) || isNaN(KH8_current_y))
+    {
+        KH8_current_x = 1;
+        KH8_current_y = 1;
+        elem.style.left = 1 + 'px'; 
+        elem.style.top = 1 + 'px'; 
+    }
+    
+    clearInterval(id);
+    id = setInterval(frame, 1);
+
+    function frame() 
+    {
+        
+        if(KH8_current_x == mouse_x && KH8_current_y == mouse_y) 
+        {
+            clearInterval(id);
+        } 
+        /*
+        if(KH8_current_x != mouse_x)
+        {
+            KH8_current_x++;
+            elem.style.left = KH8_current_x + 'px'; 
+            document.getElementById("left").innerHTML = "Left: " +  elem.style.left;
+        }
+        if(KH8_current_y != mouse_y) 
+        {
+            KH8_current_y++;
+            elem.style.top = KH8_current_y + 'px'; 
+            document.getElementById("top").innerHTML = "Top: " + elem.style.top;
+        }
+        */
+        
+        /*
+        if(KH8_current_x == mouse_x) 
+        {
+            clearInterval(id);
+        } 
+        */
+        if(KH8_current_x > mouse_x)
+        {
+            KH8_current_x--;
+            elem.style.left = KH8_current_x + 'px'; 
+        }
+        if(KH8_current_x < mouse_x)
+        {
+            KH8_current_x++;
+            elem.style.left = KH8_current_x + 'px'; 
+        }
+        
+        /*
+        if(KH8_current_y == mouse_y) 
+        {
+            clearInterval(id);
+        }
+        */
+        if(KH8_current_y > mouse_y) 
+        {
+            KH8_current_y--;
+            elem.style.top = KH8_current_y + 'px'; 
+        }
+        if(KH8_current_y < mouse_y) 
+        {
+            KH8_current_y++;
+            elem.style.top = KH8_current_y + 'px'; 
+        }
+    }
+}

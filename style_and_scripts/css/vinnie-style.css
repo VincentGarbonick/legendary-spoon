@@ -140,7 +140,15 @@
   color: #FDFFFC;/*baby powder */
 }
 
-#KH8_mover
+#K8_mover
 {
+  width: 100px;
+  height: 100px;
   position: absolute;
+}
+
+#K8_container
+{
+  background-image: url("../assets/undersea.jpg");
+  position: relative;
 }
