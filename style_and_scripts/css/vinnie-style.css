@@ -152,3 +152,17 @@
   background-image: url("../assets/undersea.jpg");
   position: relative;
 }
+
+.video_about 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video_about_primary
+{
+  height: 400px;
+  width: 400px;
+  padding-top: 30px;
+}
